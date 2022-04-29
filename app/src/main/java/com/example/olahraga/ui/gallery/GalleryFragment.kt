@@ -4,9 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.RecyclerView
+import com.example.olahraga.adapter.GalleryAdapter
 import com.example.olahraga.databinding.FragmentGalleryBinding
 
 class GalleryFragment : Fragment() {
@@ -16,23 +16,25 @@ class GalleryFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+    private lateinit var recyclerView: RecyclerView
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val galleryViewModel =
-            ViewModelProvider(this).get(GalleryViewModel::class.java)
-
         _binding = FragmentGalleryBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+        val view: View = binding.root
+        return view
+    }
 
-        val textView: TextView = binding.textGallery
-        galleryViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
-        return root
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        recyclerView = binding.rvgallery1
+        recyclerView.adapter = GalleryAdapter(requireContext(),GalleryViewModel().loadData())
+
+        recyclerView = binding.rvgallery2
+        recyclerView.adapter = GalleryAdapter(requireContext(),GalleryViewModel().loadData2())
     }
 
     override fun onDestroyView() {

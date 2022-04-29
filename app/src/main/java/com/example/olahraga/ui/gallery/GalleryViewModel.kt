@@ -23,8 +23,22 @@ class GalleryViewModel : ViewModel() {
             DataGallery(R.drawable.basket,R.string.basket,R.string.bolabesar),
             DataGallery(R.drawable.bola,R.string.bola, R.string.bolabesar),
             DataGallery(R.drawable.voli,R.string.voli, R.string.bolabesar),
+            DataGallery(R.drawable.basket,R.string.basket,R.string.bolabesar),
+            DataGallery(R.drawable.bola,R.string.bola, R.string.bolabesar),
+            DataGallery(R.drawable.voli,R.string.voli, R.string.bolabesar),
         )
     }
+    fun loadData2(): List<DataGallery>{
+        return listOf(
+            DataGallery(R.drawable.bola,R.string.bola, R.string.bolabesar),
+            DataGallery(R.drawable.voli,R.string.voli, R.string.bolabesar),
+            DataGallery(R.drawable.basket,R.string.basket,R.string.bolabesar),
+            DataGallery(R.drawable.bola,R.string.bola, R.string.bolabesar),
+            DataGallery(R.drawable.voli,R.string.voli, R.string.bolabesar),
+            DataGallery(R.drawable.basket,R.string.basket,R.string.bolabesar),
+        )
+    }
+
 
     fun setData(data: DataGallery, context: Context) {
         _judul.value = context.getString(data.judulResourceId)
