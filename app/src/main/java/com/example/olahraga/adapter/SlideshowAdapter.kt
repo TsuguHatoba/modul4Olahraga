@@ -1,4 +1,4 @@
 package com.example.olahraga.adapter
 
-class NewsAdapter {
+class SlideshowAdapter {
 }

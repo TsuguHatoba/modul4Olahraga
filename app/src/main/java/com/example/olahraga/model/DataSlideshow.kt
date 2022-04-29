@@ -1,4 +1,4 @@
 package com.example.olahraga.model
 
-class DataNews {
+class DataSlideshow {
 }
