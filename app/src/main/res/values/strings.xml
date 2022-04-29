@@ -14,4 +14,16 @@
 
     <string name="selamatdatang">Selamat Datang</string>
     <string name="welcome">Welcome</string>
+
+    //Gallery
+    <string name="bolabesar">Bola Besar</string>
+    <string name="bolakecil">Bola Kecil</string>
+    <string name="bolasedang">Bola Sedang</string>
+
+    <string name="bola">Sepak Bola</string>
+    <string name="basket">Basket</string>
+    <string name="badminton">Badminton</string>
+    <string name="voli">Voli</string>
+    <string name="tenis">Tenis</string>
+
 </resources>

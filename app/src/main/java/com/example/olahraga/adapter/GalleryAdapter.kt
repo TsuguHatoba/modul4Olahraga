@@ -6,9 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.olahraga.R
 import com.example.olahraga.model.DataGallery
+import com.example.olahraga.ui.gallery.GalleryActivity
 import com.example.olahraga.ui.gallery.GalleryViewModel
 
 class GalleryAdapter(
@@ -19,7 +21,9 @@ class GalleryAdapter(
 
 
     class GalleryViewHolder(val view: View) : RecyclerView.ViewHolder(view){
-        val imageView: ImageView = view.findViewById(R.id.item_gallery_image)
+        val imageView: ImageView = view.findViewById(R.id.gambar_gallery)
+        val judulText: TextView = view.findViewById(R.id.judul_gambar_gallery)
+        val genreText: TextView = view.findViewById(R.id.genre_gambar_gallery)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GalleryViewHolder {
@@ -31,12 +35,16 @@ class GalleryAdapter(
 
     override fun onBindViewHolder(holder: GalleryViewHolder, position: Int) {
         val item = dataset[position]
+        holder.judulText.text = context.resources.getString(item.judulResourceId)
+        holder.genreText.text = context.resources.getString(item.genreResourceId)
         holder.imageView.setImageResource(item.imageResourceId)
 
         holder.view.setOnClickListener{
-            viewModel.setData(item)
-            val intent = Intent(context, GalleryDetailActivity::class.java).apply {
+            viewModel.setData(item, context)
+            val intent = Intent(context, GalleryActivity::class.java).apply {
                 putExtra("image", viewModel.image.value)
+                putExtra("judul", viewModel.judul.value)
+                putExtra("genre", viewModel.genre.value)
             }
             context.startActivity(intent)
         }
