@@ -27,7 +27,7 @@ class GalleryActivity : AppCompatActivity() {
         val name = binding.judulActivityGallery
         name.text = intent.getStringExtra(activityJudul)
 
-        val date = binding.deskripsiActivityGallery
+        val date = binding.genreActivityGallery
         date.text = intent.getStringExtra(activityGenre)
     }
 }

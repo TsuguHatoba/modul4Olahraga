@@ -21,18 +21,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Judul"
+        android:text="judul"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gambar_activity_gallery" />
 
     <TextView
-        android:id="@+id/deskripsi_activity_gallery"
+        android:id="@+id/genre_activity_gallery"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="Desk"
+        android:text="genre"
         app:layout_constraintEnd_toEndOf="@+id/judul_activity_gallery"
         app:layout_constraintTop_toBottomOf="@+id/judul_activity_gallery" />
 </androidx.constraintlayout.widget.ConstraintLayout>
